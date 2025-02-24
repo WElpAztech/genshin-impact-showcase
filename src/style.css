@@ -1,0 +1,418 @@
+@font-face {
+  font-family: shinshin;
+  src: url(/assets/shii-webfont.woff2);
+}
+
+body {
+  font-family: shinshin, Arial;
+  font-size: 13px;
+}
+
+body p {
+  color: white;
+  margin: 0;
+}
+
+body img {
+  user-select: none;
+}
+
+.profile_characters img {
+  height: 100px;
+}
+
+.card_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+}
+
+#card_background {
+  width: 100%;
+  filter: brightness(0.7);
+}
+
+.card {
+  width: 1150px;
+  height: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.misc, .stats, .artifacts {
+  height: 95%;
+}
+
+.icon {
+  filter: brightness(0) invert(1);
+}
+
+/* splash art and constellations */
+
+.splashart {
+  width: 27%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#gachaIcon {
+  height: 100%;
+  scale: 1.1;
+}
+
+.constellations {
+  width: 15%;
+  height: 55%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.constellations img {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(49, 49, 49);
+  border-radius: 50%;
+  padding: 1px;
+}
+
+/* character name, talent, weapon and signature */
+
+.misc {
+  width: 19%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.misc_info {
+  width: 100%;
+  height: 20%;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.misc_info p {
+  font-size: 12px;
+}
+
+#character_name {
+  width: 100%;
+  font-size: 23px;
+}
+
+.friendship_slot, .lvl_slot, .weapon_lvl_slot {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.lvl_slot p:last-child, .weapon_lvl_slot p:last-child {
+  opacity: 50%;
+  margin-left: 5px;
+}
+
+.weapon_lvl_slot p:last-child {
+  font-size: 10px;
+}
+
+.friendship {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.talents {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.talent_row {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 3px;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: -5px;
+}
+
+.talent_row p {
+  font-size: 11px;
+}
+
+.talent_row img {
+  height: 100%;
+  background-color: rgb(49, 49, 49);
+  border-radius: 50%;
+  scale: 0.9;
+  padding: 2px;
+  border: solid 1px gray;
+}
+
+.talent_info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.talent_info p {
+  margin-left: 15px;
+}
+
+.talent_info p:last-child {
+  font-size: 11px;
+  margin-right: 5px;
+}
+
+.weapon {
+  width: 100%;
+  height: 19%;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+#weapon_name {
+  font-size: 12px;
+}
+
+#weapon_refinement {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 10px;
+}
+
+#weapon_icon {
+  height: 100%;
+  padding-right: 5px;
+}
+
+.weapon_info {
+  padding-left: 5px;
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#weapon_lvl {
+  font-size: 10px;
+}
+
+.weapon_info_row {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.weapon_info_row {
+  font-size: 10px;
+}
+
+.weapon_info_row p:last-child {
+  position: absolute;
+  text-align: right;
+  width: 100%;
+}
+
+.signature {
+  width: 100%;
+  height: 15%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+#signature_profilePicture {
+  height: 100%;
+  scale: 0.8;
+}
+
+.signature_info {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#signature_name, #signature_uid, #signature_hoyo {
+  margin-left: 5px;
+}
+
+#signature_name {
+  font-size: 12px;
+}
+
+#signature_uid, #signature_hoyo {
+  font-size: 10px;
+}
+
+/* character stat classes */
+
+.stats {
+  border-radius: 3px;
+  border-radius: 5px;
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat_slot {
+  width: 100%;
+  height: 8.25%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.stat_slot p {
+  font-size: 12px;
+}
+
+.stat_slot img {
+  height: 45%;
+  margin: 5px;
+  padding-right: 5px;
+}
+
+
+.stat_slot P:last-child {
+  margin-right: 5px;
+}
+
+.line {
+  flex-grow: 1;
+  background-color: white;
+  height: 2px;
+  width: auto;
+  margin: 10px;
+  opacity: 25%;
+}
+
+/* artifact classes */
+
+.artifacts {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.artifact_slot {
+  width: 100%;
+  height: 19%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.artifact_main {
+  flex-grow: 1;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+}
+
+.artifact_main img {
+  width: 20px;
+  height: 20px;
+}
+
+.artifact_main_stat {
+  font-size: 15px;
+}
+
+.artifact_main p:last-child {
+  font-size: 12px;
+}
+
+.artifact_main_Icon {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.artifact_sub {
+  width: 47%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.artifact_sub_row {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.artifact_sub_row img {
+  height: 60%;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.artifact_sub_row p{
+  font-size: 10px;
+}
+
+.artifact_sub_row p:last-child{
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  margin-left: -5px;
+}
+
+.note {
+  color: black;
+  margin-bottom: 15px;
+}

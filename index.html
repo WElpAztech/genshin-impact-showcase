@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page_title"></title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <div class="profile_characters">
+        <img id="profile_character_0" draggable="false">
+        <img id="profile_character_1" draggable="false">
+        <img id="profile_character_2" draggable="false">
+        <img id="profile_character_3" draggable="false">
+        <img id="profile_character_4" draggable="false">
+        <img id="profile_character_5" draggable="false">
+        <img id="profile_character_6" draggable="false">
+        <img id="profile_character_7" draggable="false">
+        <img id="profile_character_8" draggable="false">
+        <img id="profile_character_9" draggable="false">
+        <img id="profile_character_10" draggable="false">
+        <img id="profile_character_11" draggable="false">
+    </div>
+
+    <main>
+        <div class="card" id="capture">
+            <div class="card_background">
+                <img id="card_background" alt="card_background">
+            </div>
+
+            <div class="splashart">
+                <img id="gachaIcon" draggable="false">
+                <div class="constellations">
+                    <img id="constellation_0" alt="constellations" draggable="false">
+                    <img id="constellation_1" alt="constellations" draggable="false">
+                    <img id="constellation_2" alt="constellations" draggable="false">
+                    <img id="constellation_3" alt="constellations" draggable="false">
+                    <img id="constellation_4" alt="constellations" draggable="false">
+                    <img id="constellation_5" alt="constellations" draggable="false">
+                </div>
+            </div>
+
+            <div class="misc">
+                <div class="misc_info">
+                    <p id="character_name"></p>
+                    <div class="lvl_slot">
+                        <p id="character_lvl"></p>
+                        <p id="character_lvl_ascension"></p>
+                    </div>
+                    <div class="friendship_slot">
+                        <img src="assets/icons/Friendship.svg" class="friendship icon" alt="friendship_icon" draggable="false">
+                        <p id="character_friendship"></p>
+                    </div>
+                </div>
+
+                <div class="talents">
+                    <div class="talent_row">
+                        <img id="normalAttacks_icon" alt="talent_icon" draggable="false">
+                        <div class="talent_info">
+                            <p id="normalAttacks_value"></p>
+                            <p id="normalAttacks_name"></p>
+                        </div>
+                    </div>
+                    <div class="talent_row">
+                        <img id="elementalSkill_icon" alt="talent_icon" draggable="false">
+                        <div class="talent_info">
+                            <p id="elementalSkill_value"></p>
+                            <p id="elementalSkill_name"></p>
+                        </div>
+                    </div>
+                    <div class="talent_row">
+                        <img id="elementalBurst_icon" alt="talent_icon" draggable="false">
+                        <div class="talent_info">
+                            <p id="elementalBurst_value"></p>
+                            <p id="elementalBurst_name"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weapon">
+                    <p id="weapon_refinement"></p>
+                    <img id="weapon_icon" alt="weapon_icon" draggable="false">
+                    <div class="weapon_info">
+                        <p id="weapon_name"></p>
+                        <div class="weapon_lvl_slot">
+                            <p id="weapon_lvl"></p>
+                            <p id="weapon_lvl_phase"></p>
+                        </div>
+                        <div class="weapon_info_row">
+                            <p>Base ATK</p>
+                            <p id="weapon_atk"></p>
+                        </div>
+                        <div class="weapon_info_row">
+                            <p id="weapon_substat_name"></p>
+                            <p id="weapon_substat"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="signature">
+                    <img id="signature_profilePicture" alt="signature_profilePicture" draggable="false">
+                    <div class="signature_info">
+                        <p id="signature_name"></p>
+                        <p id="signature_uid"></p>
+                        <p id="signature_hoyo"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat_slot">
+                    <img src="assets/icons/FIGHT_PROP_HP.svg" alt="stat_icon" class="icon" draggable="false">
+                    <p>Hp</p>
+                    <div class="line"></div>
+                    <p id="maxHp"></p>
+                </div>
+                <div class="stat_slot">
+                    <img src="assets/icons/FIGHT_PROP_ATTACK.svg" alt="stat_icon" class="icon" draggable="false">
+                    <p>ATK</p>
+                    <div class="line"></div>
+                    <p id="atk"></p>
+                </div>
+                <div class="stat_slot">
+                    <img src="assets/icons/FIGHT_PROP_DEFENSE.svg" alt="stat_icon" class="icon" draggable="false">
+                    <p>DEF</p>
+                    <div class="line"></div>
+                    <p id="def"></p>
+                </div>
+                <div class="stat_slot">
+                    <img src="assets/icons/FIGHT_PROP_ELEMENT_MASTERY.svg" alt="stat_icon" class="icon" draggable="false">
+                    <p>Elemental Mastery</p>
+                    <div class="line"></div>
+                    <p id="elementalMastery">0</p>
+                </div>
+                <div class="stat_slot">
+                    <img src="assets/icons/FIGHT_PROP_CRITICAL.svg" alt="stat_icon" class="icon" draggable="false">
+                    <p>CRIT Rate</p>
+                    <div class="line"></div>
+                    <p id="critRate">0</p>
+                </div>
+                <div class="stat_slot">
+                    <img src="assets/icons/FIGHT_PROP_CRITICAL_HURT.svg" alt="stat_icon" class="icon" draggable="false">
+                    <p>CRIT DMG</p>
+                    <div class="line"></div>
+                    <p id="critDamage">0</p>
+                </div>
+                <div class="stat_slot">
+                    <img src="assets/icons/FIGHT_PROP_HEAL_ADD.svg" alt="stat_icon" class="icon" draggable="false">
+                    <p>Healing Bonus</p>
+                    <div class="line"></div>
+                    <p id="healingBonus"></p>
+                </div>
+                <div class="stat_slot">
+                    <img src="assets/icons/FIGHT_PROP_HEALED_ADD.svg" alt="stat_icon" class="icon" draggable="false">
+                    <p>Incoming Healing Bonus</p>
+                    <div class="line"></div>
+                    <p id="incomingHealingBonus"></p>
+                </div>
+                <div class="stat_slot">
+                    <img src="assets/icons/FIGHT_PROP_CHARGE_EFFICIENCY.svg" alt="stat_icon" class="icon" draggable="false">
+                    <p>Energy Recharge</p>
+                    <div class="line"></div>
+                    <p id="energyRecharge"></p>
+                </div>
+                <div class="stat_slot">
+                    <img src="assets/icons/FIGHT_PROP_ELEC_ADD_HURT.svg" alt="stat_icon" class="icon" draggable="false">
+                    <p id="elementalDamageBonusName"></p>
+                    <div class="line"></div>
+                    <p id="elementalDamageBonus"></p>
+                </div>
+            </div>
+
+            <div class="artifacts">
+                <div class="artifact_slot">
+                    <img id="EQUIP_BRACER_Main_Icon" class="artifact_main_Icon" draggable="false">
+                    <div class="artifact_main">
+                        <img id="EQUIP_BRACER_mainStat_Icon" class="icon" draggable="false">
+                        <p id="EQUIP_BRACER_Main_Value" class="artifact_main_stat"></p>
+                        <p id="EQUIP_BRACER_Main_Lvl" class="artifact_main_lvl"></p>
+                    </div>
+                    <div class="artifact_sub">
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_BRACER_statIcon_0" class="icon">
+                            <p id="EQUIP_BRACER_stat_0"></p>
+                            <p id="EQUIP_BRACER_statValue_0"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_BRACER_statIcon_1" class="icon">
+                            <p id="EQUIP_BRACER_stat_1"></p>
+                            <p id="EQUIP_BRACER_statValue_1"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_BRACER_statIcon_2" class="icon">
+                            <p id="EQUIP_BRACER_stat_2"></p>
+                            <p id="EQUIP_BRACER_statValue_2"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_BRACER_statIcon_3" class="icon">
+                            <p id="EQUIP_BRACER_stat_3"></p>
+                            <p id="EQUIP_BRACER_statValue_3"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="artifact_slot">
+                    <img id="EQUIP_NECKLACE_Main_Icon" class="artifact_main_Icon" draggable="false">
+                    <div class="artifact_main">
+                        <img id="EQUIP_NECKLACE_mainStat_Icon" class="icon" draggable="false">
+                        <p id="EQUIP_NECKLACE_Main_Value" class="artifact_main_stat"></p>
+                        <p id="EQUIP_NECKLACE_Main_Lvl" class="artifact_main_lvl"></p>
+                    </div>
+                    <div class="artifact_sub">
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_NECKLACE_statIcon_0" class="icon">
+                            <p id="EQUIP_NECKLACE_stat_0"></p>
+                            <p id="EQUIP_NECKLACE_statValue_0"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_NECKLACE_statIcon_1" class="icon">
+                            <p id="EQUIP_NECKLACE_stat_1"></p>
+                            <p id="EQUIP_NECKLACE_statValue_1"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_NECKLACE_statIcon_2" class="icon">
+                            <p id="EQUIP_NECKLACE_stat_2"></p>
+                            <p id="EQUIP_NECKLACE_statValue_2"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_NECKLACE_statIcon_3" class="icon">
+                            <p id="EQUIP_NECKLACE_stat_3"></p>
+                            <p id="EQUIP_NECKLACE_statValue_3"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="artifact_slot">
+                    <img id="EQUIP_SHOES_Main_Icon" class="artifact_main_Icon" draggable="false">
+                    <div class="artifact_main">
+                        <img id="EQUIP_SHOES_mainStat_Icon" class="icon" draggable="false">
+                        <p id="EQUIP_SHOES_Main_Value" class="artifact_main_stat"></p>
+                        <p id="EQUIP_SHOES_Main_Lvl" class="artifact_main_lvl"></p>
+                    </div>
+                    <div class="artifact_sub">
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_SHOES_statIcon_0" class="icon">
+                            <p id="EQUIP_SHOES_stat_0"></p>
+                            <p id="EQUIP_SHOES_statValue_0"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_SHOES_statIcon_1" class="icon">
+                            <p id="EQUIP_SHOES_stat_1"></p>
+                            <p id="EQUIP_SHOES_statValue_1"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_SHOES_statIcon_2" class="icon">
+                            <p id="EQUIP_SHOES_stat_2"></p>
+                            <p id="EQUIP_SHOES_statValue_2"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_SHOES_statIcon_3" class="icon">
+                            <p id="EQUIP_SHOES_stat_3"></p>
+                            <p id="EQUIP_SHOES_statValue_3"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="artifact_slot">
+                    <img id="EQUIP_RING_Main_Icon" class="artifact_main_Icon" draggable="false">
+                    <div class="artifact_main">
+                        <img id="EQUIP_RING_mainStat_Icon" class="icon" draggable="false">
+                        <p id="EQUIP_RING_Main_Value" class="artifact_main_stat"></p>
+                        <p id="EQUIP_RING_Main_Lvl" class="artifact_main_lvl"></p>
+                    </div>
+                    <div class="artifact_sub">
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_RING_statIcon_0" class="icon">
+                            <p id="EQUIP_RING_stat_0"></p>
+                            <p id="EQUIP_RING_statValue_0"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_RING_statIcon_1" class="icon">
+                            <p id="EQUIP_RING_stat_1"></p>
+                            <p id="EQUIP_RING_statValue_1"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_RING_statIcon_2" class="icon">
+                            <p id="EQUIP_RING_stat_2"></p>
+                            <p id="EQUIP_RING_statValue_2"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_RING_statIcon_3" class="icon">
+                            <p id="EQUIP_RING_stat_3"></p>
+                            <p id="EQUIP_RING_statValue_3"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="artifact_slot">
+                    <img id="EQUIP_DRESS_Main_Icon" class="artifact_main_Icon" draggable="false">
+                    <div class="artifact_main">
+                        <img id="EQUIP_DRESS_mainStat_Icon" class="icon" draggable="false">
+                        <p id="EQUIP_DRESS_Main_Value" class="artifact_main_stat"></p>
+                        <p id="EQUIP_DRESS_Main_Lvl" class="artifact_main_lvl"></p>
+                    </div>
+                    <div class="artifact_sub">
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_DRESS_statIcon_0" class="icon">
+                            <p id="EQUIP_DRESS_stat_0"></p>
+                            <p id="EQUIP_DRESS_statValue_0"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_DRESS_statIcon_1" class="icon">
+                            <p id="EQUIP_DRESS_stat_1"></p>
+                            <p id="EQUIP_DRESS_statValue_1"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_DRESS_statIcon_2" class="icon">
+                            <p id="EQUIP_DRESS_stat_2"></p>
+                            <p id="EQUIP_DRESS_statValue_2"></p>
+                        </div>
+                        <div class="artifact_sub_row">
+                            <img id="EQUIP_DRESS_statIcon_3" class="icon">
+                            <p id="EQUIP_DRESS_stat_3"></p>
+                            <p id="EQUIP_DRESS_statValue_3"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <h2>options</h2>
+    <p class="note">Note: you can use left arrow and right arrow to switch between cards</p>
+    <button id="capture_button">Download</button>
+
+    <script src="src/main.js"></script>
+    <script type="module" src="src/screenshot.js"></script>
+</body>
+</html>
