@@ -1,4 +1,4 @@
-# genshin-impact-showcase
+# gi-showcase
 
 ![Image](https://github.com/user-attachments/assets/516ad95a-334a-4ef0-bd4e-646d1521f19f)
 
